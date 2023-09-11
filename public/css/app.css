@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* navigation.blade.php */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+.links{
+    display: flex;
+    
+}
+.homeLink{
+    margin-right: 850px;
+}
+.loginButton{
+    text-decoration: none;
+    color: whitesmoke;
+    border: 2px solid #17468b;
+    border-radius: 5px;
+    padding: 3px;
+}
+a.loginButton:hover{
+    color: whitesmoke;
+    background-color: #17468b;
+}
+
+/* post index */
+.title{
+    color: whitesmoke;
+    position: absolute;
+}
+.title h1{
+    margin-bottom: 60px;
+}
+.intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.intro img{
+    margin-left: 600px;
+    width: 1000px;
+    max-height: 300;
+}
+.projectsButton{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 30px;
+    color: whitesmoke;
+    border: 1px solid #17468b;
+    background-color: #17468b;
+    border-radius: 8px;
+    padding: 10px;
+
+
+}
+a.projectsButton:hover{
+    color: whitesmoke;
+}
+
+
+
+
