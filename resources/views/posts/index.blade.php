@@ -26,8 +26,15 @@
                     <a class="projectsButton" href="{{ route('projecten.index')}}">Bekijk mijn projecten</a>
                 </div>
                 <img src="{{asset('img/myself.png')}}" alt="">
-                
             </div>
+            <div class="aboutMe">
+                <img class="aboutMeImg" src="{{asset('img/aboutme.png')}}" alt="">
+                <div class="aboutMeText">
+                    <h1>Over mij</h1>
+                    <p>Ik ben Gerben Venneman, 19 jaar en ik volg de opleiding Software Developer op het Curio in Breda. Ik ben een echte Web Developer! Op 22 November 2003 ben ik geboren in Ulvenhout. Wil je meer van mij weten zoals mijn hobby's? Klik dan op Over Mij!</p>
+                </div>
+            </div>
+            
             {{-- <div class="aboutMeParent">
                 <div class="aboutMe">
                     <div class="aboutMeText">

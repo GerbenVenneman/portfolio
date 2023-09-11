@@ -40,6 +40,7 @@ a.loginButton:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .intro img{
     margin-left: 600px;
@@ -55,10 +56,29 @@ a.loginButton:hover{
     background-color: #17468b;
     border-radius: 8px;
     padding: 10px;
+    box-shadow: 0 0 40px #17468b;
 
 
 }
 a.projectsButton:hover{
+    color: whitesmoke;
+}
+.aboutMeImg{
+    border: 1px solid #888990;
+    background-color: #888990;
+    border-radius: 8px;
+    margin-right: 170px;
+    box-shadow: 0 0 40px #888990;
+
+}
+.aboutMe{
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 200px;
+}
+.aboutMeText{
     color: whitesmoke;
 }
 
