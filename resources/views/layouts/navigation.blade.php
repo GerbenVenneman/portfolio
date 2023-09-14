@@ -1,5 +1,5 @@
 <div class="navigation">
-    <nav style="background-color: black;" x-data="{ open: false }" >
+    <nav style="background-color: black; box-shadow: 0 0 30px #17468b; position: fixed; top: 0; left 0; width: 100%; z-index: 100;" x-data="{ open: false }" >
         <!-- Primary Navigation Menu -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="nav">
@@ -9,7 +9,8 @@
                     </div>
                     <div class="projectlinks">
                         <a style="color: whitesmoke; margin-right: 10px;" href="{{route('projecten.index')}}">Projecten</a>
-                        <a style="color: whitesmoke; margin-right: 50px;" href="">Over mij</a>
+                        <a style="color: whitesmoke; margin-right: 10px;" href="{{route('posts.overmij')}}">Over mij</a>
+                        <a style="color: whitesmoke; margin-right: 50px;" href="{{route('posts.contact')}}">Contact</a>
                         @if(Auth::user() == null)
                             <a class="loginButton" href="{{route('login')}}">Inloggen</a>
                         @endif

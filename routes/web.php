@@ -20,7 +20,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::get('/overmij', [PostController::class, 'aboutMe'])->name('posts.overmij');
+Route::get('/contact', [PostController::class, 'contact'])->name('posts.contact');
 Route::get('/projecten/index', [ProjectController::class, 'index'])->name('projecten.index');
+Route::get('/projecten/create', [ProjectController::class, 'create'])->name('projecten.create');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

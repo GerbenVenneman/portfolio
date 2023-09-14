@@ -14,16 +14,25 @@
             <div class="container mt-2">
                 <div class="row">
                     <div class="col-lg-12 margin-tb">   
-                        <div class="header">
-                            <div class="title">
-                                <h2>Web-projecten</h2>
+                        <div class="header">                            
+                            {{-- <div class="pull-right mb-2">
+                                <a class="projectButton" href="{{ route('projecten.create') }}">Project toevoegen</a>
                             </div>
-                            
-                            <div class="pull-right mb-2">
-                                {{-- <a class="btn btn-primary ml-3" href="{{ route('blogs.create') }}">Blog toevoegen</a> --}}
+                            <div class="popup" id="popup-1">
+                                <div class="overlay"></div>
+                                <div class="content">
+                                    <div class="close" onclick="togglePopup()">&times;</div>
+                                    <h1>Test</h1>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea rem fuga dolores aliquam nam molestias, suscipit, quas tempora ex possimus dignissimos animi deleniti omnis saepe neque magnam. Quisquam, qui veritatis.</p>
+                                </div>
                             </div>
+                            <button class="showPopup" onclick="togglePopup()">Show popup</button>
+                            <script>
+                                function togglePopup(){
+                                    document.getElementById("popup-1").classList.toggle("active")
+                                }
+                            </script> --}}
                         </div>       
-                        
                     </div>
                 </div>
                 {{-- @if ($message = Session::get('success'))

@@ -6,26 +6,26 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     align-items: center;
 }
 .links{
     display: flex;
+    align-items: center;
     
 }
 .homeLink{
-    margin-right: 850px;
+    margin-right: 800px;
 }
 .loginButton{
     text-decoration: none;
     color: whitesmoke;
-    border: 2px solid #17468b;
+    /* border: 2px solid #17468b;
     border-radius: 5px;
-    padding: 3px;
+    padding: 3px; */
 }
 a.loginButton:hover{
     color: whitesmoke;
-    background-color: #17468b;
 }
 
 /* post index */
@@ -40,39 +40,69 @@ a.loginButton:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
     
 }
 .intro img{
     margin-left: 600px;
     width: 1000px;
     max-height: 300;
+    
 }
 .projectsButton{
     text-decoration: none;
     font-weight: bolder;
     font-size: 30px;
-    color: whitesmoke;
-    border: 1px solid #17468b;
-    background-color: #17468b;
+    color: #17468b;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 0 40px #17468b;
+    box-shadow: 0 0 40px whitesmoke;
 
 
 }
 a.projectsButton:hover{
-    color: whitesmoke;
+    color: #17468b;
 }
+.projectButton{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #17468b;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 40px whitesmoke;
+    margin-top: 40px;
+}
+a.projectButton:hover{
+    color: #17468b;
+}
+.header{
+    margin-top: 80px;
+}
+.modal {
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+  }
 .aboutMeImg{
-    border: 1px solid #888990;
-    background-color: #888990;
+    border: 1px solid #272627;
+    background-color: #272627;
     border-radius: 8px;
     margin-right: 170px;
-    box-shadow: 0 0 40px #888990;
+    box-shadow: 0 0 40px #272627;
 
 }
 .aboutMe{
-    margin-top: 200px;
+    margin-top: 150px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -81,7 +111,155 @@ a.projectsButton:hover{
 .aboutMeText{
     color: whitesmoke;
 }
+.aboutMeLink{
+    color: #17468b;
+    font-size: 35px;
+    font-weight: bolder;
 
+}
+a.aboutMeLink:hover{
+    color: #17468b;
+}
+.footer{
+    background-color: #888990;
+}
+.footerLinks{
+    display: flex;
+    flex-direction: column;
+}
 
+/* over mij pagina */
+.aboutMeTitle{
+    margin-top: 40px;
+    color: whitesmoke;
+}
+.backgroundImage{
+    background-image: url('../../assets/img/background.jpg');
+}
+.aboutMeSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.aboutMeSection p{
+    color: whitesmoke;
+}
+.gym{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.gymImg{
+    border: 1px solid #eb723b;
+    background-color: #eb723b;
+    border-radius: 8px;
+    box-shadow: 0 0 30px #eb723b;
+    
+}
+.gymtext h2{
+    color: #eb723b;
+}
+.workimg2{
+    background-color: #ba8522;
+    border: 1px solid #ba8522;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 0 30px #ba8522;
+}
+.workImg{ 
+    margin-left: 152px;
+    width: 210px;
+    border-bottom-right-radius: 8px;
+}
+.worktext h2{
+    color: #ba8522;
+}
+.aldiImg1{
+    background-color: #ec827e;
+    border: 1px solid #ec827e;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 0 30px #ec827e;
+    /* position: absolute;
+    top: 728px;
+    left: 0;
 
+    animation: move 1s linear 1; */
+}
+/* @keyframes move {
+    0% {
+        left: 0;
+      }
+    
+      100% {
+        left: 50%;
+      }
+  } */
+.aldiImg{
+    width: 203px;
+    border-bottom-right-radius: 8px;
+    margin-left: 159px;
+}
+.alditext h2{
+    color: #ec827e;
+}
+.video{
+    margin-top: 29px;
+    border: 1px solid #272627;
+    border-radius: 8px;
+    background-color: #272627;
+    width: 375px;
+    padding: 3px;
+}
+.makingVideosText h2{
+    color: #272627;
+}
 
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: opx;
+    width: 100vw;
+    height: 100vw;
+    z-index: 1;
+    display: none;
+
+}
+.popup .content{
+    margin-top: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%) scale(0);
+    background-color: whitesmoke;
+    width: 450px;
+    height: 220px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.popup.close{
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.popup.active .overlay{
+    display: block;
+
+}
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    transform:translate(-50%, -50%) scale(1);
+}

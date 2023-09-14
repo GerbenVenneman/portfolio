@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Portfolio</title>
+    <script>
+        // document.addEventListener("click", function(event) {
+        //     if (event.target.tagName === "A") {
+        //     // Zoek de video-objecten op de pagina
+        //     var videoObjects = document.querySelectorAll("object");
+
+        //     // Stop alle video-objecten
+        //         for (var i = 0; i < videoObjects.length; i++) {
+        //             videoObjects[i].style.display = "none";
+        //         }
+        //     }
+        // });
+    </script>
 </head>
 <body>
     <div class="container mt-2">
@@ -20,6 +33,22 @@
                 </div>
             </div>
             <div class="intro">
+                
+                  <script>
+                //   function openModal() {
+                //     document.querySelector(".modal").style.display = "block";
+                //   }
+                  
+                //   function closeModal() {
+                //     document.querySelector(".modal").style.display = "none";
+                //   }
+                  
+                //   // Open de pop-up
+                //   document.querySelector(".open-modal").addEventListener("click", openModal);
+                  
+                //   // Sluit de pop-up
+                //   document.querySelector(".close-modal").addEventListener("click", closeModal);
+                  </script>
                 <div class="title">
                     <p>Web developer</p>
                     <h1>Hey, ik ben <span style="color: #17468b">Gerben</span> Venneman</h1>
@@ -30,79 +59,19 @@
             <div class="aboutMe">
                 <img class="aboutMeImg" src="{{asset('img/aboutme.png')}}" alt="">
                 <div class="aboutMeText">
-                    <h1>Over mij</h1>
-                    <p>Ik ben Gerben Venneman, 19 jaar en ik volg de opleiding Software Developer op het Curio in Breda. Ik ben een echte Web Developer! Op 22 November 2003 ben ik geboren in Ulvenhout. Wil je meer van mij weten zoals mijn hobby's? Klik dan op Over Mij!</p>
+                    <a class="aboutMeLink" href="{{ route('posts.overmij')}}">Over mij</a>
+                    <p>Ik ben Gerben Venneman, 19 jaar en ik volg de opleiding Software Developer op het Curio in Breda. Ik ben een echte Web Developer! Op 22 November 2003 ben ik geboren in Ulvenhout. Wil je meer van mij weten? Klik dan op Over mij!</p>
                 </div>
-            </div>
-            
-            {{-- <div class="aboutMeParent">
-                <div class="aboutMe">
-                    <div class="aboutMeText">
-                        <p>Hallo ik ben Gerben Venneman en ik heet u welkom op mijn portfolio website. Op deze website kunt u diversen projecten vinden die ik heb gemaakt tijdens mijn opleiding.</p>
-                    </div>
-                    
-                    <img style="width: 200px;" src="{{asset('img/my.jpg')}}" alt="">
+            </div>    
+            {{-- <div class="footer">
+                <div class="footerLinks">
+                    <a style="color: white;" href="{{route('posts.index')}}"><span style="color: #17468b">H</span>ome</a>
+                    <a style="color: whitesmoke;" href="{{route('projecten.index')}}">Projecten</a>
+                    <a style="color: whitesmoke;" href="{{route('posts.overmij')}}">Over mij</a>
                 </div>
-            </div>
-            <div class="winWebParent">
-                <div class="test">
-                    <a href="{{ route('web.index')}}">
-                        <div class="webParent">
-                            <div class="web">
-                                <img style="width: 200px;" src="{{asset('img/web.png')}}" alt="">
-                                <h6>Web-projecten bekijken</h6>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('win.index')}}">
-                        <div class="winParent">
-                            <div class="win">
-                                <img style="width: 200px;" src="{{asset('img/win.png')}}" alt="">
-                                <h6>Win-projecten bekijken</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
             </div> --}}
-                
-            
-            
         </div>
-        {{-- @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-        @endif --}}
-        <div class="blogs">
-            {{-- @foreach($blogs as $blog)
-                
-                    <div class="blog">
-                        <div class="title">                       
-                            <h5><strong>Titel</strong></h5>
-                            {{ $blog->title }}                   
-                        </div>
-                        <div class="content">
-                            <h5><strong>Beschrijving</strong></h5>
-                            {{ $blog->content }}
-                        </div>
-                        <div class="comment">
-                            
-                        </div>
-                    </div>
-                
-            @endforeach --}}
-        </div>  
-        {{-- <td><a class="btn btn-primary" href="{{ route('studenten.edit', $student->id)}}">Aanpassen</a></td>
-        <td>
-            <form action="{{ route('studenten.destroy',$student->id) }}" method="Post">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger">Verwijder</button>
-            </form>
-        </td> --}}
     </div>
-    
 </body>
 </html>
 </x-app-layout>

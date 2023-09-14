@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body style="background-color: black; class="font-sans antialiased">
+    <body  style="background-color: black;" class="font-sans antialiased">
         {{-- <div class="min-h-screen bg-gray-100"> --}}
             @include('layouts.navigation')
 
@@ -28,7 +28,7 @@
             @endif
 
             <!-- Page Content -->
-            <main style="background-color: black;">
+            <main class="backgroundImage" style="background-color: black;">
                 {{ $slot }}
             </main>
         {{-- </div> --}}

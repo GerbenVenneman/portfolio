@@ -11,4 +11,8 @@ class ProjectController extends Controller
         $posts = Post::all();
         return view ('projecten.index', ['posts' => $posts]);
     }
+    public function create(){
+        $posts = Post::all();
+        return view ('projecten.create', ['posts' => $posts]);
+    }
 }
