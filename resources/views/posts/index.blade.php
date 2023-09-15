@@ -8,19 +8,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Portfolio</title>
-    <script>
-        // document.addEventListener("click", function(event) {
-        //     if (event.target.tagName === "A") {
-        //     // Zoek de video-objecten op de pagina
-        //     var videoObjects = document.querySelectorAll("object");
-
-        //     // Stop alle video-objecten
-        //         for (var i = 0; i < videoObjects.length; i++) {
-        //             videoObjects[i].style.display = "none";
-        //         }
-        //     }
-        // });
-    </script>
 </head>
 <body>
     <div class="container mt-2">
@@ -33,22 +20,6 @@
                 </div>
             </div>
             <div class="intro">
-                
-                  <script>
-                //   function openModal() {
-                //     document.querySelector(".modal").style.display = "block";
-                //   }
-                  
-                //   function closeModal() {
-                //     document.querySelector(".modal").style.display = "none";
-                //   }
-                  
-                //   // Open de pop-up
-                //   document.querySelector(".open-modal").addEventListener("click", openModal);
-                  
-                //   // Sluit de pop-up
-                //   document.querySelector(".close-modal").addEventListener("click", closeModal);
-                  </script>
                 <div class="title">
                     <p>Web developer</p>
                     <h1>Hey, ik ben <span style="color: #17468b">Gerben</span> Venneman</h1>

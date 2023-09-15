@@ -24,6 +24,7 @@ Route::get('/overmij', [PostController::class, 'aboutMe'])->name('posts.overmij'
 Route::get('/contact', [PostController::class, 'contact'])->name('posts.contact');
 Route::get('/projecten/index', [ProjectController::class, 'index'])->name('projecten.index');
 Route::get('/projecten/create', [ProjectController::class, 'create'])->name('projecten.create');
+Route::post('/projecten/store', [ProjectController::class, 'store'])->name('projecten.store');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

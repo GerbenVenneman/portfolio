@@ -19,4 +19,5 @@ class PostController extends Controller
         $posts = Post::all();
         return view ('posts.contact', ['posts' => $posts]);
     }
+    
 }
