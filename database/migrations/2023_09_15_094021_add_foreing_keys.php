@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('images', function (Blueprint $table) {
+            $table->foreignId('post_id')
+                ->references('id')
+                ->on('posts');
+        });
     }
 
     /**

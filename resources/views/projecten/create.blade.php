@@ -27,7 +27,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Upload een foto</strong>
-                    <input type="file" name="image">
+                    <input type="file" name="images[]">
                     {{-- <button class="btn btn-primary ml-3"><input type="submit" value="{{ __('Upload')}}"></button> --}}
                     @error('title')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

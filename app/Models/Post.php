@@ -9,5 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'image', 'content'];
+    protected $fillable = ['title', 'content'];
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
 }

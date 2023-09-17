@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -10,7 +11,8 @@ class ProjectController extends Controller
 {
     public function index(){
         $posts = Post::all();
-        return view ('projecten.index', ['posts' => $posts]);
+        $images = Image::all();
+        return view ('projecten.index', ['posts' => $posts, 'images' => $images]);
     }
     public function create(){
         $posts = Post::all();
@@ -20,50 +22,20 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
         ]);
-        // $post = new Post();
-
-        // // Controleer of de gebruiker een afbeelding heeft geupload
-        // if (!$request->hasFile('image')) {
-        //     // Geef een foutmelding
-        //     throw new BadRequestException('Je moet een afbeelding uploaden.');
-        // }
-
-        // // Vul de gegevens van het bericht in
-        // $post->title = $request->input('title');
-        // $post->content = $request->input('content');
-        // $post->image = $request->file('image')->store('public/images');
-
-        // // Sla het bericht op
-        // $post->save();
-        // $file = $request->file('image');
-
-        // // Store the file in the public/images directory
-        // $filename = Storage::disk('public')->putFile('images', $file);
-    
-        // Return the filename
+        $post = Post::create($request->post());
         if ($request->hasFile('images')) {
 
             foreach ($request->file('images') as $image) {
-
                 $imageName = $image->getClientOriginalName();
-
                 $image->move(public_path('images'), $imageName);
-
- 
-
                 Image::create([
-
-                    'path' => $imageName,
-
-                    'project_id' => $project->id,
-
+                    'fileName' => $imageName,
+                    'post_id' => $post->id,
                 ]);
-
             }
-
         }
+        $post->save();
         return redirect()->route('projecten.index');
     }
 }

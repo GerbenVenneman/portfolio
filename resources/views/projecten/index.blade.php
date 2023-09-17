@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <title>Portfolio</title>
-    </head>
+    </head> 
     <body>
         <div class="background">
             <div class="container mt-2">
@@ -18,8 +18,11 @@
                             <div class="pull-right mb-2">
                                 <a class="projectButton" href="{{ route('projecten.create') }}">Project toevoegen</a>
                             </div>
-                            @foreach ($posts as $post)
-                                <img src="{{ asset('images/' . $post->image) }}" />
+                            @foreach($images as $image)
+                                @if(Storage::disk('public')->exists('images/' . $image->fileName))
+                                    <p style="color: whitesmoke">Hallo</p>
+                                    <img src="{{ asset('images/' . $image->fileName) }}">
+                                @endif
                             @endforeach
                             // {{-- <div class="popup" id="popup-1">
                             //     <div class="overlay"></div>
