@@ -18,13 +18,20 @@
                             <div class="pull-right mb-2">
                                 <a class="projectButton" href="{{ route('projecten.create') }}">Project toevoegen</a>
                             </div>
-                            @foreach($images as $image)
-                                @if(Storage::disk('public')->exists('images/' . $image->fileName))
-                                    <p style="color: whitesmoke">Hallo</p>
-                                    <img src="{{ asset('images/' . $image->fileName) }}">
-                                @endif
-                            @endforeach
-                            // {{-- <div class="popup" id="popup-1">
+                            <div class="project">
+                                @foreach($posts as $post)
+                                    <div class="project-group">
+                                        @foreach($post->images as $image)
+                                            @if(Storage::disk('public')->exists('images/' . $image->fileName))
+                                                <img style="width: 300px; margin-top: 20px" src="{{ asset('images/' . $image->filename) }}">
+                                            @endif
+                                        @endforeach
+                                        <span style="font-size: 25px; font-weight: bolder; color: #17468b;">{{ $post->title }}</span>
+                                        <span style="color: whitesmoke;">{{ $post->content }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                             {{-- <div class="popup" id="popup-1">
                             //     <div class="overlay"></div>
                             //     <div class="content">
                             //         <div class="close" onclick="togglePopup()">&times;</div>

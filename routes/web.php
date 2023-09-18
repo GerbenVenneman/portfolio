@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -21,7 +22,10 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/overmij', [PostController::class, 'aboutMe'])->name('posts.overmij');
-Route::get('/contact', [PostController::class, 'contact'])->name('posts.contact');
+// Route::get('/contact', [PostController::class, 'contact'])->name('posts.contact');
+Route::get('/contact', [ContactController::class, 'show'])->name('posts.contact');
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
+
 Route::get('/projecten/index', [ProjectController::class, 'index'])->name('projecten.index');
 Route::get('/projecten/create', [ProjectController::class, 'create'])->name('projecten.create');
 Route::post('/projecten/store', [ProjectController::class, 'store'])->name('projecten.store');

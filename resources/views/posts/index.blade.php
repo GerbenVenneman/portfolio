@@ -25,7 +25,7 @@
                     <h1>Hey, ik ben <span style="color: #17468b">Gerben</span> Venneman</h1>
                     <a class="projectsButton" href="{{ route('projecten.index')}}">Bekijk mijn projecten</a>
                 </div>
-                <img src="{{asset('img/myself.png')}}" alt="">
+                <img src="{{asset('img/myself3.png')}}" alt="">
             </div>
             <div class="aboutMe">
                 <img class="aboutMeImg" src="{{asset('img/aboutme.png')}}" alt="">
