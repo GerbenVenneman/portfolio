@@ -19,10 +19,15 @@
                     {{-- <a class="btn btn-primary ml-3" href="{{ route('blogs.create') }}">Blog toevoegen</a> --}}
                 </div>
             </div>
+            <div class="quote">
+                <p style="color: whitesmoke; margin-top: 30px; font-size: 20px; display: flex; justify-content: center; margin-left: 280px">"Push harder then yesterday if you want a different tomorrow"</p>
+            </div>
+                    
             <div class="intro">
                 <div class="title">
                     <p>Web developer</p>
                     <h1>Hey, ik ben <span style="color: #17468b">Gerben</span> Venneman</h1>
+                    
                     <a class="projectsButton" href="{{ route('projecten.index')}}">Bekijk mijn projecten</a>
                 </div>
                 <img src="{{asset('img/myself3.png')}}" alt="">

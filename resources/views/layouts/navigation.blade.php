@@ -8,9 +8,9 @@
                         <a style="color: white; font-size: 25px;" href="{{route('posts.index')}}"><span style="color: #17468b">H</span>ome</a>
                     </div>
                     <div class="projectlinks">
-                        <a style="color: whitesmoke; margin-right: 10px;" href="{{route('projecten.index')}}">Projecten</a>
-                        <a style="color: whitesmoke; margin-right: 10px;" href="{{route('posts.overmij')}}">Over mij</a>
-                        <a style="color: whitesmoke; margin-right: 50px;" href="{{route('posts.contact')}}">Contact</a>
+                        <a style="color: whitesmoke; margin-right: 40px;" href="{{route('projecten.index')}}">Projecten</a>
+                        <a style="color: whitesmoke; margin-right: 40px;" href="{{route('posts.overmij')}}">Over mij</a>
+                        <a style="color: whitesmoke; margin-right: 70px;" href="{{route('posts.contact')}}">Contact</a>
                         @if(Auth::user() == null)
                             <a class="loginButton" href="{{route('login')}}">Inloggen</a>
                         @endif

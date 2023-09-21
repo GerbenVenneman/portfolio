@@ -15,7 +15,12 @@
     
 }
 .homeLink{
-    margin-right: 800px;
+    margin-right: 700px;
+}
+.homeLink a:hover{
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid whitesmoke;
 }
 .loginButton{
     text-decoration: none;
@@ -26,6 +31,11 @@
 }
 a.loginButton:hover{
     color: whitesmoke;
+}
+.projectlinks a:hover{
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid whitesmoke;
 }
 
 /* post index */
@@ -40,7 +50,7 @@ a.loginButton:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    
     
 }
 .intro img{
@@ -340,7 +350,36 @@ a.aboutMeLink:hover{
     align-items: center;
     border: 1px solid #272627;
     border-radius: 8px;
+    background-color: #272627;
     box-shadow: 0 0 40px #272627;
     width: 500px;
     padding: 20px;
 }   
+.edit-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .modal-footer {
+    background-color: #f5f5f5; /* Pas de achtergrondkleur aan */
+    border-top: none; /* Verwijder de bovenste rand */
+    text-align: center; /* Centreer de knoppen */
+}
+
+/* Als je de knoppen wilt centreren, maar wel zichtbaar wilt maken */
+.modal-footer button {
+    margin: 0 auto; /* Centreer de knoppen horizontaal */
+}
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Achtergrondkleur van de knoppen */
+    width: 10%; /* Breedte van het knopgebied aan de zijkant van de afbeelding */
+}
+
+/* Stijl voor de pijlen op de "Vorige" en "Volgende" knoppen */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #fff; /* Kleur van de pijlen */
+    color: #000; /* Kleur van de pijlen */
+    border-radius: 50%; /* Maakt de pijlen rond */
+    font-size: 24px; /* Grootte van de pijlen */
+    padding: 15px; /* Ruimte binnen de knoppen voor de pijlen */
+}
