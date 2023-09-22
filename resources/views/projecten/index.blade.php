@@ -17,39 +17,52 @@
                     <div class="col-lg-12 margin-tb">   
                         <div class="header">                            
                             <div class="pull-right mb-2">
-                                <a class="projectButton" href="{{ route('projecten.create') }}">Project toevoegen</a>
+                                @if(Auth::user() != null)
+                                    <a class="projectButton" href="{{ route('projecten.create') }}">Project toevoegen</a>
+                                @endif
                             </div>
                             @php
                                 $posts = $posts ?? [];
                             @endphp 
                             <div class="project">
-                                @foreach($posts as $key => $post)
+                                @foreach($posts as $post)
                                     <div class="project-group">
                                         <div class="edit-delete">
-                                            <a href="{{ route('projecten.edit', $post->id) }}"><img style="width: 35px; margin-left: 350px" src="{{asset('img/edit.png')}}" alt=""></a>
-                                            <button class="delete-project" data-project-id="{{ $post->id }}" data-toggle="modal" data-target="#deleteModal">
-                                                <img style="width: 56px; " src="{{asset('img/delete.png')}}" alt="">
-                                            </button>
+                                            @if(Auth::user() != null)
+                                                <a href="{{ route('projecten.edit', $post->id) }}"><img style="width: 35px; margin-left: 350px" src="{{asset('img/edit.png')}}" alt=""></a>
+                                                <button class="delete-project" data-project-id="{{ $post->id }}" data-toggle="modal" data-target="#deleteModal">
+                                                    <img style="width: 56px; " src="{{asset('img/delete.png')}}" alt="">
+                                                </button>
+                                            @endif
                                         </div>
-                                        <div id="slideshow-{{ $key }}" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                @foreach($post->images as $image)
-                                                    @if(Storage::disk('public')->exists('images/' . $image->fileName))
-                                                        <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                                            <img class="d-block w-100" src="{{ asset('images/' . $image->filename) }}" alt="{{ $post->title }}">
+                            
+                                        @if(count($post->images) > 1)
+                                            <div id="slideshow_{{ $post->id }}" class="carousel slide" data-ride="carousel">
+                                                <div class="carousel-inner">
+                                                    @foreach($post->images as $key => $image)
+                                                        <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                                            <img style="width: 400px;
+                                                            height: 400px;
+                                                            object-fit: cover;
+                                                            object-position: center;" class="d-block w-100" src="{{ asset('images/' . $image->fileName) }}" alt="{{ $post->title }}">
                                                         </div>
-                                                    @endif
-                                                @endforeach
+                                                    @endforeach
+                                                </div>
+                                                <a class="carousel-control-prev" href="#slideshow_{{ $post->id }}" role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Vorige</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#slideshow_{{ $post->id }}" role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Volgende</span>
+                                                </a>
                                             </div>
-                                            <a class="carousel-control-prev" href="#slideshow-{{ $key }}" role="button" data-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Vorige</span>
-                                            </a>
-                                            <a class="carousel-control-next" href="#slideshow-{{ $key }}" role="button" data-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="sr-only">Volgende</span>
-                                            </a>
-                                        </div>
+                                        @else
+                                            @foreach($post->images as $image)
+                                                <img class="d-block w-100" src="{{ asset('images/' . $image->fileName) }}" alt="{{ $post->title }}">
+                                            @endforeach
+                                        @endif
+                            
                                         <span style="font-size: 25px; font-weight: bolder; color: #17468b;">{{ $post->title }}</span>
                                         <span style="color: whitesmoke;">{{ $post->content }}</span>
                                     </div>
@@ -101,7 +114,7 @@
                     // Voer een AJAX-verzoek uit om de post (project) te verwijderen
                     $.ajax({
                         url: '/projecten/' + postId, // Pas de route aan voor je toepassing
-                        type: 'DELETE',
+                        type: 'POST',
                         data: {
                             _token: '{{ csrf_token() }}', // CSRF-token
                             "_method": 'DELETE',
@@ -112,10 +125,11 @@
                             $('#deleteModal').modal('hide');
                             alert(response.message); // Toon een succesbericht (kan verbeterd worden)
                         },
-                        error: function (xhr, a, b) {
+                        error: function (xhr, a, b,c ) {
                             console.log(xhr);
                             console.log(a);
                             console.log(b);
+                            console.log(xhr.responseJSON);
                             // Toon een foutmelding aan de gebruiker (kan verbeterd worden)
                             alert('Er is een fout opgetreden bij het verwijderen van het project.');
                         }

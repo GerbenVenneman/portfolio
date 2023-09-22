@@ -80,9 +80,8 @@ class ProjectController extends Controller
 
         return redirect()->route('projecten.index');
     }
-    public function destroy(Post $post)
+    public function destroy(Request $request, Post $post)
     {
-        dd(1);
         if (!$post) {
             return response()->json(['message' => 'Post niet gevonden'], 404);
         }

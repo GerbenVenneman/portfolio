@@ -30,12 +30,10 @@ Route::get('/projecten/create', [ProjectController::class, 'create'])->name('pro
 Route::post('/projecten/store', [ProjectController::class, 'store'])->name('projecten.store');
 Route::get('/projecten/{post}/edit', [ProjectController::class, 'edit'])->name('projecten.edit');
 Route::put('/projecten/{post}/update', [ProjectController::class, 'update'])->name('projecten.update');
-Route::get('/projecten/{post}/edit', [ProjectController::class, 'edit'])->name('projecten.edit');
 Route::delete('/projecten/{post}', [ProjectController::class, 'destroy'])->name('posts.destroy');
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('posts.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

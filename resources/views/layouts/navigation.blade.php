@@ -13,6 +13,7 @@
                         <a style="color: whitesmoke; margin-right: 70px;" href="{{route('posts.contact')}}">Contact</a>
                         @if(Auth::user() == null)
                             <a class="loginButton" href="{{route('login')}}">Inloggen</a>
+                            <a class="loginButton" href="{{route('register')}}">Registreren</a>
                         @endif
                     </div>
                 </div>

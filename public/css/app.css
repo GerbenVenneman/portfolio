@@ -15,7 +15,7 @@
     
 }
 .homeLink{
-    margin-right: 700px;
+    margin-right: 600px;
 }
 .homeLink a:hover{
     text-decoration: none;
@@ -382,4 +382,10 @@ a.aboutMeLink:hover{
     border-radius: 50%; /* Maakt de pijlen rond */
     font-size: 24px; /* Grootte van de pijlen */
     padding: 15px; /* Ruimte binnen de knoppen voor de pijlen */
+}
+.carousel-inner{
+    width: 400;
+    height: 400;
+    object-fit: cover;
+    object-position: center;
 }
